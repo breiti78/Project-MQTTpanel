@@ -1,0 +1,25 @@
+name: Docker Image Prod build
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: docker login
+      env:
+        DOCKER_USER: ${{ secrets.DockerUser }}   
+        DOCKER_PASSWORD: ${{ secrets.DockerPassword }}  
+      run: |
+        docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+    - name: Build the Docker image
+      run: |
+        docker build . --file Dockerfile --tag breiti78/project-mqttpanel:latest
+    - name: docker push
+      run: |
+        docker push breiti78/project-mqttpanel:latest
