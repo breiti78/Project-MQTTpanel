@@ -291,6 +291,9 @@ void setPanelConfig(char *Key)
 
 	else if (strcmp(Key, "row_address_type") == 0)
 		setPanelConfig(Key, (int)0, true);
+	
+	else if (strcmp(Key, "led-pixel-mapper") == 0)
+		setPanelConfig(Key, (char *)NULL, true);
 
 }
 

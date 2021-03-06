@@ -3,13 +3,14 @@
 	{
 		"hardware_mapping":"adafruit-hat-pwm",
 		"led_rgb_sequence":"RGB",
-		"rows":64,
+		"rows":32,
 		"cols":64,
-		"chain_length":1,
+		"chain_length":6,
 		"parallel":1,
 		"brightness":100,
 		"scan_mode":1,
-		"show_refresh_rate":0
+		"show_refresh_rate":0,
+		"led-pixel-mapper":"U-mapper"
 	},
 	"background":
 	{
