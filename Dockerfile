@@ -1,6 +1,6 @@
-FROM mickmake/rpi-mqtt:latest
+FROM breiti78/project-mqttpanel:latest
 
-MAINTAINER Mick Hellstrom <mick@mickmake.com>
+MAINTAINER Remo Breitenmoser <remo@breitis.ch>
 
 COPY files/ /
 
