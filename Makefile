@@ -3,27 +3,11 @@
 #
 
 
-# Determine whether we use "nodeJS" or "JQ".
-JSONCMD := $(shell jq -r '.project' ./container.json)
-ifneq ($(JSONCMD),)
-
-define GetFromPkg
-$(shell jq -r ".$(1)" ./container.json)
-endef
-
-else
 JSONCMD := $(shell node -p "require('./container.json').project")
-ifneq ($(JSONCMD),)
+
 define GetFromPkg
 $(shell node -p "require('./container.json').$(1)")
 endef
-
-else
-$(shell )
-
-endif
-endif
-
 
 # Set global variables from container file.
 PROJECT		:= $(call GetFromPkg,project)
