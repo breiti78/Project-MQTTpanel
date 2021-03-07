@@ -1,4 +1,4 @@
-FROM mickmake/rpi-mqtt:latest
+FROM node:14
 
 COPY files/ /
 
